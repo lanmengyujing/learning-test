@@ -1,4 +1,4 @@
 {
-  "presets": ["es2015","react", "stage-0", "flow"],
+  "presets": ["env", "flow"],
   "plugins": ["transform-es2015-arrow-functions", "syntax-async-functions", "transform-async-to-generator", "transform-async-to-module-method"]
 }

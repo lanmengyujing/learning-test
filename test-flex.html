@@ -1,0 +1,90 @@
+<html>
+<head>
+    <style>
+        .wrapper {
+            display: flex;
+            flex-flow: row wrap;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .wrapper > * {
+            padding: 10px;
+            flex: 0 1 100%;
+        }
+
+        .header {
+            background: tomato;
+        }
+
+        .footer {
+            background: lightgreen;
+        }
+
+        .main {
+            text-align: left;
+            background: deepskyblue;
+        }
+
+        .aside-1 {
+            background: gold;
+        }
+        .aside-2 {
+            background: hotpink;
+        }
+        .aside-3 {
+            background: yellow;
+        }
+
+        @media all and (max-width: 800px) {
+            .aside {
+                flex: 1 1 auto;
+            }
+
+            .aside.aside-3 {
+                flex: 2 1 auto;
+            }
+        }
+
+        .container {
+            margin:10px;
+            display: -webkit-flex;
+            display: flex;
+            width: 500px;
+            height: 240px;
+            background-color: #eee;
+        }
+        .B {
+            width: 100px;
+            height: 100px;
+        }
+        .B1{
+            background-color:rgba(255,255,0,.5);
+            -webkit-flex-grow:1;
+            -moz-flex-grow:1;
+            flex-grow:1;
+        }
+        .B2{
+            background-color:rgba(255,0,255,.5);
+        }
+        .B3{
+            background-color:rgba(0,255,255,.5);
+        }
+    </style>
+</head>
+
+<div class="wrapper">
+    <header class="header">Header</header>
+
+    <aside class="aside aside-1">Aside 1 </aside>
+    <aside class="aside aside-2">Aside 2 Aside Aside</aside>
+    <aside class="aside aside-3">Aside 3</aside>
+    <footer class="footer">Footer</footer>
+</div>
+
+<div class="container">
+    <div class="B B1">B1</div>
+    <div class="B B2">B2</div>
+    <div class="B B3">B3</div>
+</div>
+</html>

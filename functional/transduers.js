@@ -28,12 +28,12 @@ const isEven = filter(x => {
 });
 const isNot2 = filter(val => {
     console.log("in isNot2", val);
-    return val != 2
+    return val != 2;
 });
 
-[1, 2, 3].reduce(isNot2(isEven(doubleTheMap(pushReducer))), []);
-[1, 2, 3].reduce(isNot2(doubleTheMap(pushReducer)), []);
-[1, 2, 3].reduce(doubleTheMap(isNot2(pushReducer)), []);
+[1, 2, 3].reduce(isNot2(isEven(doubleMap(pushReducer))), []);
+[1, 2, 3].reduce(isNot2(doubleMap(pushReducer)), []);
+[1, 2, 3].reduce(doubleMap(isNot2(pushReducer)), []);
 
 
 const compose = (...functions) =>
@@ -42,6 +42,15 @@ const compose = (...functions) =>
 
 
 [1, 2, 3, 4].reduce(isNot2(isEven(doubleMap(pushReducer))), []) // this was [8]
-
 [1, 2, 3, 4].reduce(compose(isNot2, isEven, doubleMap)(pushReducer), []) // this is [8]
 [1, 2, 3, 4].reduce(compose(doubleMap, isEven, isNot2)(pushReducer), []) // this is [4,6,8]
+
+
+var isNotEvenTwoRe = (accumulation, value) => {
+    const reducer = (accumulation, value) => {
+        if (value % 2 === 0) return pushReducer(accumulation, value);
+        return accumulation;
+    }
+    if (value !== 2) return reducer(accumulation, value);
+    return accumulation;
+}

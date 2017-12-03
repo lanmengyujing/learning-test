@@ -40,6 +40,8 @@ const compose = (...functions) =>
     functions.reduce((accumulation, fn) =>
         (...args) => accumulation(fn(...args), x => x));
 
+// first accumulation would be the first fn
+//second accumulation: (...args) => accumulation(fn(...args), x => x))
 
 [1, 2, 3, 4].reduce(isNot2(isEven(doubleMap(pushReducer))), []) // this was [8]
 [1, 2, 3, 4].reduce(compose(isNot2, isEven, doubleMap)(pushReducer), []) // this is [8]

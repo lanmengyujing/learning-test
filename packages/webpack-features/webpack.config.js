@@ -13,6 +13,15 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /src\/index.js$/,
+                use: [{
+                    loader: 'webpack-rollup-loader',
+                    options: {
+                        external: [/* modules that shouldn't be rollup'd */]
+                    },
+                }]
+            },
+            {
                 test: /\.js$/,
                 use: [
                     'babel-loader'

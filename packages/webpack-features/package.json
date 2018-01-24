@@ -1,0 +1,26 @@
+{
+  "name": "learning-test",
+  "version": "1.0.0",
+  "description": "learn practice",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config webpack.config.js ",
+    "prepublish": "yarn run build"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2016": "^6.24.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "rollup": "^0.55.0",
+    "webpack": "^3.10.0",
+    "webpack-rollup-loader": "^0.6.1"
+  },
+  "dependencies": {
+    "babel-preset-stage-3": "^6.24.1"
+  }
+}

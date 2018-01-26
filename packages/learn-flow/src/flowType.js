@@ -33,8 +33,8 @@ obj.foo = true;
 
 class BookCharacter {
     // public alias: string;
-    public health: number;
-    private age: number;
+    // public health: number;
+    // private age: number;
 
     constructor(alias, health, age) {
         this.alias = alias;

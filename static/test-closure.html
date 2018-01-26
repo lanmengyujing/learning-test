@@ -1,0 +1,36 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <div id="container">
+        <div class="B B1">B1</div>
+        <div class="B B2">B2</div>
+        <div class="B B3">B3</div>
+    </div>
+    <button id='create'>create dom</button>
+
+    <script async>
+        function makeFunc() {
+            var nameMozi = 'Mozilla';
+            var container = document.getElementById('container');
+            var element1 = document.createElement('div');
+            var displayName = function() {
+              console.log(nameMozi);
+                var element = element1;
+                var li = document.createElement('li');
+                element.appendChild(li);
+                window.posConf = {};
+            }
+            return displayName;
+        }
+
+        var myFunc = makeFunc();
+        // myFunc();
+
+    </script>
+</body>
+
+</html>

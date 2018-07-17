@@ -3,6 +3,8 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
+  devtool: 'source-map',
+  watch: true,
   entry: {
     'index': './src/index.js',
   },

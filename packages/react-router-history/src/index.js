@@ -1,6 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
+import { browserHistory, Router } from "react-router";
 import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
@@ -13,24 +14,13 @@ const styles = {
 
 const App = () => (
   <div style={styles}>
-    <Router>
-      <div>
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
-        </ul>
-
-        <hr />
-
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
-
-        <Back />
-      </div>
+    <Router history={browserHistory}>
+      <Route path="/" component={Home}>
+        <Route path="/about" component={About}/>
+        <Route path="/contact" component={Contact}/>
+      </Route>
     </Router>
   </div>
 );
 
-render(<App />, document.getElementById("root"));
+render(<App/>, document.getElementById("root"));

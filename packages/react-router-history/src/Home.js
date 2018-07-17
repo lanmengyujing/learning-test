@@ -8,6 +8,7 @@ export default ({children}) => {
         <Navigation/>
         <h1>Weclcome!</h1>
         {children}
+        <Back/>
       </div>
     )
 }
